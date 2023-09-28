@@ -18,12 +18,21 @@ form.addEventListener('submit', (e) => {
         },
         // The data we are sending. It's converted to a JSON string using "JSON.stringify"
         // Sends an object with a 'task' property, which contains the task data collected from the form.
-        body: JSON.stringify({ task: task }),
-    })
-    
-    // Pick up from here 
-});
+        //body: JSON.stringify({ task: task })
+        body: JSON.stringify({ task: todoTask })
+        })
+        .then(response => response.json())
+        .then(data => 
 
+        /* Step 6: Handle the server response: Byte Almighty
+             >>initiate server responses : */
+                           
+            if (data.success) {
+
+        // Step 7: The to-do task was successfully added
+                    // >> Pick up from here
+
+    })   
 // Get a reference to the task input element.
 const taskInput = document.getElementById('task-input');
 // Get a reference to the add task button element.
@@ -54,4 +63,5 @@ if(target.tagName === 'LI'){
     target.classList.toggle('completed')
 }
 })
+
 
